@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Calculator App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Theme Toggle -->
+
+    <button id="theme-toggle"
+            aria-label="Toggle Theme">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+    <!-- Main Container -->
+
+    <main class="container">
+
+        <!-- Calculator Card -->
+
+        <section class="calculator">
+
+            <!-- Header -->
+
+            <div class="calculator-header">
+
+                <h1>
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    Calculator
+
+                </h1>
+
+                <p>
+                    Perform quick calculations instantly
+                </p>
+
+            </div>
+
+            <!-- Display -->
+
+            <div class="display">
+
+                <!-- Previous Expression -->
+
+                <div class="previous-display">
+
+                    12 + 5
+
+                </div>
+
+                <!-- Current Display -->
+
+                <div class="current-display"
+                     id="current-display">
+
+                    17
+
+                </div>
+
+            </div>
+
+            <!-- Calculator Buttons -->
+
+            <div class="buttons-grid">
+
+                <!-- Row 1 -->
+
+                <button type="button"
+                        class="action-btn"
+                        data-action="clear">
+
+                    AC
+
+                </button>
+
+                <button type="button"
+                        class="action-btn"
+                        data-action="delete">
+
+                    DEL
+
+                </button>
+
+                <button type="button"
+                        class="operator-btn"
+                        data-operator="%">
+
+                    %
+
+                </button>
+
+                <button type="button"
+                        class="operator-btn"
+                        data-operator="/">
+
+                    ÷
+
+                </button>
+
+                <!-- Row 2 -->
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="7">
+
+                    7
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="8">
+
+                    8
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="9">
+
+                    9
+
+                </button>
+
+                <button type="button"
+                        class="operator-btn"
+                        data-operator="*">
+
+                    ×
+
+                </button>
+
+                <!-- Row 3 -->
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="4">
+
+                    4
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="5">
+
+                    5
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="6">
+
+                    6
+
+                </button>
+
+                <button type="button"
+                        class="operator-btn"
+                        data-operator="-">
+
+                    −
+
+                </button>
+
+                <!-- Row 4 -->
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="1">
+
+                    1
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="2">
+
+                    2
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number="3">
+
+                    3
+
+                </button>
+
+                <button type="button"
+                        class="operator-btn"
+                        data-operator="+">
+
+                    +
+
+                </button>
+
+                <!-- Row 5 -->
+
+                <button type="button"
+                        class="number-btn zero"
+                        data-number="0">
+
+                    0
+
+                </button>
+
+                <button type="button"
+                        class="number-btn"
+                        data-number=".">
+
+                    .
+
+                </button>
+
+                <button type="button"
+                        class="equal-btn"
+                        data-action="calculate">
+
+                    =
+
+                </button>
+
+            </div>
+
+            <!-- Scientific Operations -->
+
+            <div class="scientific-section">
+
+                <h2>Scientific Operations</h2>
+
+                <div class="scientific-buttons">
+
+                    <button type="button"
+                            data-scientific="sqrt">
+
+                        √
+
+                    </button>
+
+                    <button type="button"
+                            data-scientific="power">
+
+                        x²
+
+                    </button>
+
+                    <button type="button"
+                            data-scientific="sin">
+
+                        sin
+
+                    </button>
+
+                    <button type="button"
+                            data-scientific="cos">
+
+                        cos
+
+                    </button>
+
+                    <button type="button"
+                            data-scientific="tan">
+
+                        tan
+
+                    </button>
+
+                    <button type="button"
+                            data-scientific="log">
+
+                        log
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- History Section -->
+
+            <div class="history-section">
+
+                <div class="history-header">
+
+                    <h2>
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        History
+
+                    </h2>
+
+                    <button type="button"
+                            class="clear-history-btn">
+
+                        Clear History
+
+                    </button>
+
+                </div>
+
+                <ul class="history-list">
+
+                    <li>
+                        5 + 5 = 10
+                    </li>
+
+                    <li>
+                        12 × 4 = 48
+                    </li>
+
+                    <li>
+                        √64 = 8
+                    </li>
+
+                </ul>
+
+                <!-- Empty History Message -->
+
+                <p class="empty-history">
+
+                    No calculations yet
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

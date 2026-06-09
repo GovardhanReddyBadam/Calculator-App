@@ -1,0 +1,614 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root{
+
+    --bg-gradient:
+    linear-gradient(
+        135deg,
+        #dbeafe,
+        #bfdbfe,
+        #c4b5fd
+    );
+
+    --container-bg:
+    rgba(255,255,255,0.25);
+
+    --display-bg:
+    rgba(255,255,255,0.4);
+
+    --text-color:#111827;
+
+    --number-btn:#ffffff;
+
+    --operator-btn:#8b5cf6;
+
+    --equal-btn:#2563eb;
+
+    --action-btn:#ef4444;
+
+    --hover:#dbeafe;
+
+    --shadow:
+    0px 10px 30px rgba(0,0,0,0.15);
+
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg-gradient);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:20px;
+
+    transition:0.4s ease;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode{
+
+    --bg-gradient:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    );
+
+    --container-bg:
+    rgba(15,23,42,0.7);
+
+    --display-bg:
+    rgba(30,41,59,0.8);
+
+    --text-color:#f8fafc;
+
+    --number-btn:#1e293b;
+
+    --hover:#334155;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:420px;
+
+    background:var(--container-bg);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid
+    rgba(255,255,255,0.3);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.4s ease;
+
+    animation:fadeIn 0.8s ease;
+
+}
+
+/* =========================
+   CONTAINER HOVER
+========================= */
+
+.container:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* =========================
+   DISPLAY
+========================= */
+
+.display{
+
+    background:var(--display-bg);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    overflow-x:auto;
+
+    min-height:120px;
+
+    box-shadow:
+    inset 0px 3px 8px rgba(0,0,0,0.1);
+
+}
+
+/* =========================
+   PREVIOUS DISPLAY
+========================= */
+
+.previous-display{
+
+    font-size:18px;
+
+    opacity:0.6;
+
+    margin-bottom:10px;
+
+    word-break:break-word;
+
+}
+
+/* =========================
+   CURRENT DISPLAY
+========================= */
+
+.current-display{
+
+    font-size:40px;
+
+    font-weight:600;
+
+    word-break:break-word;
+
+}
+
+/* =========================
+   BUTTON GRID
+========================= */
+
+.buttons-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+/* =========================
+   ALL BUTTONS
+========================= */
+
+.buttons-grid button{
+
+    border:none;
+
+    outline:none;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    box-shadow:
+    0px 5px 10px rgba(0,0,0,0.1);
+
+}
+
+/* =========================
+   NUMBER BUTTONS
+========================= */
+
+.number-btn{
+
+    background:var(--number-btn);
+
+    color:var(--text-color);
+
+}
+
+/* =========================
+   OPERATOR BUTTONS
+========================= */
+
+.operator-btn{
+
+    background:var(--operator-btn);
+
+    color:white;
+
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-btn{
+
+    background:var(--action-btn);
+
+    color:white;
+
+}
+
+/* =========================
+   EQUAL BUTTON
+========================= */
+
+.equal-btn{
+
+    background:var(--equal-btn);
+
+    color:white;
+
+    grid-column:span 2;
+
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.buttons-grid button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+
+    box-shadow:
+    0px 10px 20px rgba(0,0,0,0.15);
+
+}
+
+/* =========================
+   BUTTON ACTIVE
+========================= */
+
+.buttons-grid button:active{
+
+    transform:scale(0.96);
+
+}
+
+/* =========================
+   SCIENTIFIC SECTION
+========================= */
+
+.scientific-section{
+
+    margin-top:25px;
+
+}
+
+/* =========================
+   SCIENTIFIC TITLE
+========================= */
+
+.scientific-section h2{
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+/* =========================
+   SCIENTIFIC BUTTONS
+========================= */
+
+.scientific-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+/* =========================
+   SCIENTIFIC BUTTON STYLE
+========================= */
+
+.scientific-buttons button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#06b6d4;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+/* =========================
+   SCIENTIFIC BUTTON HOVER
+========================= */
+
+.scientific-buttons button:hover{
+
+    transform:translateY(-3px);
+
+    background:#0891b2;
+
+}
+
+/* =========================
+   HISTORY SECTION
+========================= */
+
+.history-section{
+
+    margin-top:25px;
+
+    background:var(--display-bg);
+
+    padding:15px;
+
+    border-radius:20px;
+
+    max-height:200px;
+
+    overflow-y:auto;
+
+}
+
+/* =========================
+   HISTORY HEADER
+========================= */
+
+.history-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+/* =========================
+   CLEAR HISTORY BUTTON
+========================= */
+
+.clear-history-btn{
+
+    border:none;
+
+    background:#ef4444;
+
+    color:white;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+/* =========================
+   HISTORY LIST
+========================= */
+
+.history-list{
+
+    list-style:none;
+
+}
+
+/* =========================
+   HISTORY ITEMS
+========================= */
+
+.history-list li{
+
+    padding:10px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.2);
+
+    transition:0.3s ease;
+
+}
+
+/* =========================
+   HISTORY ITEM HOVER
+========================= */
+
+.history-list li:hover{
+
+    background:rgba(255,255,255,0.1);
+
+}
+
+/* =========================
+   EMPTY HISTORY
+========================= */
+
+.empty-history{
+
+    text-align:center;
+
+    opacity:0.6;
+
+    margin-top:10px;
+
+}
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+#theme-toggle{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    z-index:1000;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    box-shadow:
+    0px 5px 15px rgba(0,0,0,0.2);
+
+    transition:0.3s ease;
+
+}
+
+/* =========================
+   THEME TOGGLE HOVER
+========================= */
+
+#theme-toggle:hover{
+
+    transform:
+    rotate(20deg)
+    scale(1.1);
+
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.history-section::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.history-section::-webkit-scrollbar-thumb{
+
+    background:#94a3b8;
+
+    border-radius:10px;
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:500px){
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    .buttons-grid button{
+
+        padding:15px;
+
+        font-size:18px;
+
+    }
+
+    .current-display{
+
+        font-size:32px;
+
+    }
+
+}
